@@ -3,34 +3,40 @@
 
 @layer base {
   :root {
-    --color-paper:   #F0EBE1;
-    --color-ink:     #0D0D0D;
-    --color-ink-2:   #2A2A2A;
-    --color-ink-3:   #5A5A5A;
-    --color-forest:  #1A3D2B;
-    --color-moss:    #2E5C3F;
-    --color-rule:    rgba(13,13,13,0.14);
-    --background:    oklch(0.95 0.01 80);
-    --foreground:    oklch(0.08 0 0);
-    --primary:       oklch(0.28 0.08 145);
+    --paper:    #F0EBE1;
+    --ink:      #0D0D0D;
+    --ink-2:    #2A2A2A;
+    --ink-3:    #5A5A5A;
+    --forest:   #1A3D2B;
+    --moss:     #2E5C3F;
+    --rule:     rgba(13,13,13,0.14);
+
+    --background:         oklch(0.95 0.01 80);
+    --foreground:         oklch(0.08 0 0);
+    --primary:            oklch(0.28 0.08 145);
     --primary-foreground: oklch(0.95 0.01 80);
-    --accent:        oklch(0.38 0.08 145);
-    --accent-foreground: oklch(0.95 0.01 80);
-    --muted:         oklch(0.90 0.01 80);
-    --muted-foreground: oklch(0.40 0 0);
-    --border:        oklch(0.08 0 0 / 14%);
+    --accent:             oklch(0.38 0.08 145);
+    --accent-foreground:  oklch(0.95 0.01 80);
+    --muted:              oklch(0.90 0.01 80);
+    --muted-foreground:   oklch(0.40 0 0);
+    --border:             oklch(0.08 0 0 / 14%);
   }
 }
 
 body {
+  background-color: var(--paper);
+  color: var(--ink);
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 300;
-  background-color: var(--color-paper);
-  color: var(--color-ink);
   cursor: none;
 }
 
 @media (hover: none) {
-  .cursor, .cursor-ring { display: none; }
-  body { cursor: auto; }
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+  body {
+    cursor: auto;
+  }
 }

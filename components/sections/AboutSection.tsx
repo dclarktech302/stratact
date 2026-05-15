@@ -1,48 +1,67 @@
 'use client'
 import { motion } from 'motion/react'
 
+const stats = [
+  { val: '3', label: 'Practice Areas' },
+  { val: '12+', label: 'Service Offerings' },
+  { val: 'EDU', label: 'Higher Ed Focus' },
+]
+
 export default function AboutSection() {
   return (
-    <section id="about" className="bg-[#F0EBE1] py-24 px-8 md:px-16">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 md:divide-x md:divide-[rgba(13,13,13,0.14)]">
-        {/* Left */}
+    <section id="about" className="bg-[#F0EBE1] py-24 md:py-36 px-7 md:px-14">
+      <div className="max-w-[1100px] mx-auto grid md:grid-cols-[1fr_1.05fr]">
+
+        {/* Left column */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.75, ease: 'easeOut' }}
-          className="relative"
+          className="relative pb-16 border-b border-[rgba(13,13,13,0.14)] md:pb-0 md:border-b-0 md:border-r md:border-[rgba(13,13,13,0.14)] md:pr-28"
         >
-          <p className="font-['IBM_Plex_Mono'] text-[#1A3D2B] text-xs uppercase tracking-[0.14em] mb-8">
+          {/* Section marker */}
+          <p className="font-['IBM_Plex_Mono'] text-[0.62rem] tracking-[0.2em] uppercase text-[#1A3D2B] flex items-center gap-4 mb-16">
             §01 — About
+            <span className="flex-1 h-px bg-[#1A3D2B]/40 max-w-[5rem]" />
           </p>
+
+          {/* Ghost numeral */}
           <div className="relative">
             <span
-              className="absolute -top-8 -left-4 font-['Instrument_Serif'] italic text-[#0D0D0D] select-none pointer-events-none leading-none"
-              style={{ fontSize: '12rem', opacity: 0.05 }}
-              aria-hidden
+              aria-hidden="true"
+              className="absolute top-[-1.5rem] right-0 font-['Instrument_Serif'] italic text-[#0D0D0D]/[0.05] leading-none pointer-events-none select-none"
+              style={{ fontSize: 'clamp(7rem, 12vw, 13rem)' }}
             >
               I
             </span>
-            <h2 className="relative font-['Instrument_Serif'] italic text-[#0D0D0D] leading-tight mb-0"
-                style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.75, ease: 'easeOut', delay: 0.1 }}
+              className="relative font-['Instrument_Serif'] italic font-normal text-[#0D0D0D] leading-[1.1]"
+              style={{ fontSize: 'clamp(2.4rem, 4.5vw, 4.2rem)' }}
+            >
               Strategic partners.<br />
-              <span className="not-italic text-[#1A3D2B]">Not outside vendors.</span>
-            </h2>
+              <strong className="not-italic font-normal text-[#1A3D2B] block">
+                Not outside vendors.
+              </strong>
+            </motion.h2>
           </div>
         </motion.div>
 
-        {/* Right */}
+        {/* Right column */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.75, ease: 'easeOut', delay: 0.15 }}
-          className="md:pl-16"
+          className="pt-16 md:pt-0 md:pl-28"
         >
-          <div className="space-y-6 font-['IBM_Plex_Sans'] font-light text-[#0D0D0D] leading-[1.95] text-sm md:text-base">
+          <div className="space-y-6 font-['IBM_Plex_Sans'] font-light text-[1.05rem] leading-[1.95] text-[#2A2A2A]">
             <p>
-              StratAct Consulting & Research Group provides consulting and research services to organizational leaders, higher education institutions, and nonprofits. We are strategic consultants, advisors, and genuine partners for the clients we serve.
+              StratAct Consulting &amp; Research Group provides consulting and research services to organizational leaders, higher education institutions, and nonprofits. We are strategic consultants, advisors, and genuine partners for the clients we serve.
             </p>
             <p>
               You can probably identify your own areas in need of growth, development, or change. What we offer is a disciplined, collaborative process — working through those ideas, exploring options rigorously, and implementing solutions that actually hold.
@@ -52,23 +71,27 @@ export default function AboutSection() {
             </p>
           </div>
 
-          <div className="border-t border-[rgba(13,13,13,0.14)] mt-10 pt-8 grid grid-cols-3 gap-4">
-            {[
-              { val: '3', label: 'Practice Areas' },
-              { val: '12+', label: 'Service Offerings' },
-              { val: 'EDU', label: 'Higher Ed Focus' },
-            ].map((item) => (
+          {/* Footnote stats */}
+          <div className="border-t border-[rgba(13,13,13,0.14)] mt-14 pt-8 flex gap-14">
+            {stats.map((item) => (
               <div key={item.label}>
-                <div className="font-['Instrument_Serif'] italic text-[#1A3D2B]" style={{ fontSize: '2.2rem' }}>
+                <div
+                  className="font-['Instrument_Serif'] italic text-[#1A3D2B] leading-none mb-1"
+                  style={{ fontSize: '2.2rem' }}
+                >
                   {item.val}
                 </div>
-                <div className="font-['IBM_Plex_Mono'] text-[#5A5A5A] uppercase tracking-[0.14em]" style={{ fontSize: '0.62rem' }}>
+                <div
+                  className="font-['IBM_Plex_Mono'] text-[#5A5A5A] uppercase tracking-[0.14em]"
+                  style={{ fontSize: '0.62rem' }}
+                >
                   {item.label}
                 </div>
               </div>
             ))}
           </div>
         </motion.div>
+
       </div>
     </section>
   )

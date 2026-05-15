@@ -3,65 +3,67 @@ import { motion } from 'motion/react'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-[#1A3D2B] flex items-end pb-24 px-8 md:px-16 overflow-hidden">
-      {/* Ghost S */}
+    <section
+      id="hero"
+      className="relative min-h-screen bg-[#1A3D2B] flex flex-col justify-end px-7 md:px-14 pb-16 md:pb-20 pt-0 overflow-hidden"
+    >
+      {/* Ghost background letter */}
       <span
-        className="absolute top-0 right-0 font-['Instrument_Serif'] italic text-white select-none pointer-events-none leading-none"
-        style={{ fontSize: 'clamp(28rem,42vw,54rem)', opacity: 0.035 }}
-        aria-hidden
+        aria-hidden="true"
+        className="absolute top-[-0.1em] right-[-0.05em] font-['Instrument_Serif'] italic text-white/[0.035] leading-none pointer-events-none select-none"
+        style={{ fontSize: 'clamp(28rem, 42vw, 54rem)' }}
       >
         S
       </span>
 
-      <div className="relative z-10 max-w-4xl">
+      <div className="relative z-10 max-w-[1100px]">
+        {/* Eyebrow */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.7 }}
-          className="font-['IBM_Plex_Mono'] text-white/60 text-xs uppercase tracking-[0.22em] mb-8"
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="font-['IBM_Plex_Mono'] text-[0.68rem] tracking-[0.22em] uppercase text-white/45 mb-10"
         >
           Consulting &amp; Research Group — Est. 2020
         </motion.p>
 
+        {/* Headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.7 }}
-          className="font-['Instrument_Serif'] italic text-white leading-[1.05] mb-10"
-          style={{ fontSize: 'clamp(3.5rem, 8vw, 7rem)' }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="font-['Instrument_Serif'] font-normal text-[#F0EBE1] leading-[0.92] mb-14"
+          style={{ fontSize: 'clamp(3.5rem, 8.5vw, 9rem)' }}
         >
-          Strategy<br />
-          <span className="pl-12 md:pl-24">into</span><br />
-          <span className="pl-20 md:pl-48">Action.</span>
+          <span className="not-italic block">Strategy</span>
+          <span className="block pl-10 italic">into</span>
+          <span className="block pl-10">Action.</span>
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.7 }}
-          className="text-white/60 font-['IBM_Plex_Sans'] font-light text-base md:text-lg max-w-xl mb-10 leading-relaxed"
-        >
-          We partner with higher education institutions, nonprofits, and mission-driven organizations to turn complex challenges into clear, lasting outcomes.
-        </motion.p>
-
+        {/* Bottom row */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.7 }}
-          className="flex flex-col sm:flex-row gap-4"
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="flex flex-col md:flex-row justify-between items-start md:items-end gap-10"
         >
-          <a
-            href="#services"
-            className="inline-block bg-[#F0EBE1] text-[#1A3D2B] px-8 py-3 text-sm font-['IBM_Plex_Mono'] uppercase tracking-[0.14em] hover:bg-white transition-colors"
-          >
-            Our Services →
-          </a>
-          <a
-            href="#contact"
-            className="inline-block border border-[#F0EBE1]/50 text-[#F0EBE1] px-8 py-3 text-sm font-['IBM_Plex_Mono'] uppercase tracking-[0.14em] hover:border-[#F0EBE1] transition-colors"
-          >
-            Start a Conversation ↗
-          </a>
+          <p className="font-['IBM_Plex_Sans'] text-[0.98rem] font-light leading-[1.85] text-white/65 max-w-[420px]">
+            We partner with higher education institutions, nonprofits, and mission-driven organizations to turn complex challenges into clear, lasting outcomes.
+          </p>
+          <div className="flex flex-col gap-3 items-start md:items-end">
+            <a
+              href="#services"
+              className="font-['IBM_Plex_Mono'] text-[0.72rem] tracking-[0.14em] uppercase bg-[#F0EBE1] text-[#1A3D2B] px-6 py-3.5 hover:bg-white transition-colors"
+            >
+              Our Services →
+            </a>
+            <a
+              href="#contact"
+              className="font-['IBM_Plex_Mono'] text-[0.72rem] tracking-[0.14em] uppercase text-[#F0EBE1] border border-white/25 px-6 py-3.5 hover:border-white/60 hover:bg-white/[0.08] transition-colors"
+            >
+              Start a Conversation ↗
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -26,19 +26,21 @@ const clients = [
 
 export default function ClientsSection() {
   return (
-    <section id="clients" className="relative bg-[#1A3D2B] py-24 px-8 md:px-16 overflow-hidden">
+    <section id="clients" className="relative bg-[#1A3D2B] py-24 md:py-36 px-7 md:px-14 overflow-hidden">
       {/* Ghost S */}
       <span
-        className="absolute bottom-0 right-0 font-['Instrument_Serif'] italic text-white select-none pointer-events-none leading-none"
-        style={{ fontSize: '60vw', opacity: 0.025 }}
-        aria-hidden
+        aria-hidden="true"
+        className="absolute bottom-[-0.3em] right-[-0.1em] font-['Instrument_Serif'] italic text-white/[0.025] leading-none pointer-events-none select-none"
+        style={{ fontSize: '60vw' }}
       >
         S
       </span>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <p className="font-['IBM_Plex_Mono'] text-white/40 text-xs uppercase tracking-[0.14em] mb-16">
+      <div className="relative z-10 max-w-[1100px] mx-auto">
+        {/* Section marker */}
+        <p className="font-['IBM_Plex_Mono'] text-[0.62rem] tracking-[0.2em] uppercase text-white/40 flex items-center gap-4 mb-16 md:mb-20">
           §04 — Who We Serve
+          <span className="flex-1 h-px bg-white/20 max-w-[5rem]" />
         </p>
 
         <motion.h2
@@ -46,11 +48,11 @@ export default function ClientsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.75 }}
-          className="font-['Instrument_Serif'] italic text-[#F0EBE1] leading-tight mb-16"
-          style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
+          className="font-['Instrument_Serif'] italic font-normal text-[#F0EBE1] leading-[1.05] mb-16 md:mb-20"
+          style={{ fontSize: 'clamp(2.8rem, 5vw, 5.5rem)' }}
         >
           Built for institutions{' '}
-          <span style={{ opacity: 0.45 }}>that serve others.</span>
+          <em className="not-italic opacity-45">that serve others.</em>
         </motion.h2>
 
         <div>
@@ -61,27 +63,29 @@ export default function ClientsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.75, delay: i * 0.1 }}
-              className="grid py-8 border-t border-white/10 hover:bg-white/[0.04] transition-colors"
+              className="grid gap-12 py-9 border-t border-white/[0.12] last:border-b last:border-white/[0.12] hover:bg-white/[0.04] transition-colors"
               style={{ gridTemplateColumns: '3rem 1fr 1fr' }}
             >
-              <span className="font-['IBM_Plex_Mono'] text-white/30 mt-1" style={{ fontSize: '0.6rem' }}>
+              <span
+                className="font-['IBM_Plex_Mono'] text-white/30 tracking-[0.1em] mt-1"
+                style={{ fontSize: '0.6rem' }}
+              >
                 {client.num}
               </span>
               <span
-                className="font-['Instrument_Serif'] italic text-[#F0EBE1] self-center"
+                className="font-['Instrument_Serif'] italic font-normal text-[#F0EBE1] self-center leading-none"
                 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)' }}
               >
                 {client.name}
               </span>
               <span
-                className="font-['IBM_Plex_Sans'] font-light text-white/45 self-center pl-4 md:pl-8 leading-relaxed"
+                className="font-['IBM_Plex_Sans'] font-light text-white/45 self-center leading-[1.75]"
                 style={{ fontSize: '0.85rem' }}
               >
                 {client.desc}
               </span>
             </motion.div>
           ))}
-          <div className="border-t border-white/10" />
         </div>
       </div>
     </section>

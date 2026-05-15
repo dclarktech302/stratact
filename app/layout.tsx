@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import CustomCursor from '@/components/CustomCursor'
+import Cursor from '@/components/features/Cursor'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 
@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <CustomCursor />
+        <Cursor />
         <Header />
         <main>{children}</main>
         <Footer />
