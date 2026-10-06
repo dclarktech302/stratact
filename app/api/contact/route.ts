@@ -3,9 +3,8 @@ import { Resend } from 'resend'
 import ContactEmail from '@/components/emails/ContactEmail'
 import type { ContactFormData } from '@/lib/types'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(req: Request) {
+  const resend = new Resend(process.env.RESEND_API_KEY)
   const body: ContactFormData = await req.json()
 
   if (!body.firstName || !body.lastName || !body.email || !body.message) {
