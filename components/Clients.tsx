@@ -55,9 +55,7 @@ export default function Clients() {
               gap: '12px 48px',
               borderTop: i === 0 ? '1px solid var(--ink)' : '1px solid var(--rule)',
               borderBottom: i === rows.length - 1 ? '1px solid var(--ink)' : 'none',
-              transition: 'background 200ms, color 200ms, padding-left 200ms, padding-right 200ms',
             }}
-            className="clients-row"
           >
             <span style={{
               fontFamily: "'Instrument Serif', serif",
@@ -81,14 +79,6 @@ export default function Clients() {
         ))}
       </div>
 
-      <style>{`
-        .clients-row:hover {
-          background: var(--forest);
-          color: var(--paper);
-          padding-left: 16px;
-          padding-right: 16px;
-        }
-      `}</style>
     </section>
   )
 }

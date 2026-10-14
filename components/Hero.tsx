@@ -30,7 +30,7 @@ export default function Hero() {
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
         marginTop: 'clamp(40px,6vw,88px)',
         borderTop: '1px solid var(--ink)',
       }}>
