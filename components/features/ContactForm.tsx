@@ -11,11 +11,11 @@ export default function ContactForm() {
   const [form, setForm] = useState<ContactFormData>({
     firstName: '',
     lastName: '',
-    title: '',
+    titleRole: '',
     organization: '',
     email: '',
-    serviceArea: '',
-    message: '',
+    areaOfInterest: '',
+    needs: '',
   })
   const [errors, setErrors] = useState<Set<string>>(new Set())
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -27,7 +27,7 @@ export default function ContactForm() {
       setForm((prev) => ({ ...prev, [k]: e.target.value }))
 
   const validate = () => {
-    const required: (keyof ContactFormData)[] = ['firstName', 'lastName', 'email', 'message']
+    const required: (keyof ContactFormData)[] = ['firstName', 'lastName', 'email', 'needs']
     const missing = new Set(required.filter((k) => !form[k]?.trim()))
     setErrors(missing)
     return missing.size === 0
@@ -93,8 +93,8 @@ export default function ContactForm() {
         <label className={labelBase}>Title / Role</label>
         <input
           className={inputBase}
-          value={form.title}
-          onChange={set('title')}
+          value={form.titleRole}
+          onChange={set('titleRole')}
           placeholder="Director of Academic Affairs"
         />
       </div>
@@ -122,7 +122,7 @@ export default function ContactForm() {
 
       <div>
         <label className={labelBase}>Area of Interest</label>
-        <select className={inputBase} value={form.serviceArea} onChange={set('serviceArea')}>
+        <select className={inputBase} value={form.areaOfInterest} onChange={set('areaOfInterest')}>
           <option value="">Select one...</option>
           <option>Business Consulting</option>
           <option>Professional Consulting</option>
@@ -134,10 +134,10 @@ export default function ContactForm() {
       <div>
         <label className={labelBase}>Your Needs *</label>
         <textarea
-          className={`${fieldClass('message')} resize-none`}
+          className={`${fieldClass('needs')} resize-none`}
           rows={5}
-          value={form.message}
-          onChange={set('message')}
+          value={form.needs}
+          onChange={set('needs')}
           placeholder="Tell us about your goals and challenges..."
         />
       </div>
@@ -166,7 +166,6 @@ export default function ContactForm() {
         type="submit"
         disabled={status === 'loading'}
         className="font-['IBM_Plex_Mono'] text-[0.72rem] tracking-[0.16em] uppercase bg-[#1A3D2B] hover:bg-[#2E5C3F] text-[#F0EBE1] px-9 py-4 transition-colors border-0 rounded-none disabled:opacity-60 self-start mt-2"
-        style={{ cursor: 'none' }}
       >
         {status === 'loading' ? 'Sending…' : 'Send Message →'}
       </button>

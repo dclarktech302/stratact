@@ -1,9 +1,9 @@
 export interface ContactFormData {
   firstName: string
   lastName: string
-  title?: string
+  titleRole?: string
   organization?: string
   email: string
-  serviceArea?: string
-  message: string
+  areaOfInterest?: string
+  needs: string
 }
