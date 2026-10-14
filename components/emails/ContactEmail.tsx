@@ -11,22 +11,22 @@ export default function ContactEmail(data: ContactFormData) {
           <Heading style={{ color: '#1A3D2B', fontSize: '24px', marginBottom: '8px' }}>
             New Inquiry — StratAct
           </Heading>
-          {data.serviceArea && (
+          {data.areaOfInterest && (
             <Text style={{ color: '#5A5A5A', fontSize: '13px', marginTop: 0 }}>
-              Area of Interest: {data.serviceArea}
+              Area of Interest: {data.areaOfInterest}
             </Text>
           )}
           <Hr />
           <Section>
             <Text style={{ fontSize: '14px', margin: '8px 0' }}><strong>Name:</strong> {data.firstName} {data.lastName}</Text>
-            {data.title && <Text style={{ fontSize: '14px', margin: '8px 0' }}><strong>Title:</strong> {data.title}</Text>}
+            {data.titleRole && <Text style={{ fontSize: '14px', margin: '8px 0' }}><strong>Title:</strong> {data.titleRole}</Text>}
             {data.organization && <Text style={{ fontSize: '14px', margin: '8px 0' }}><strong>Organization:</strong> {data.organization}</Text>}
             <Text style={{ fontSize: '14px', margin: '8px 0' }}><strong>Email:</strong> {data.email}</Text>
           </Section>
           <Hr />
           <Section>
-            <Text style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '8px' }}>Message:</Text>
-            <Text style={{ fontSize: '14px', lineHeight: '1.7', whiteSpace: 'pre-wrap' }}>{data.message}</Text>
+            <Text style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '8px' }}>Needs:</Text>
+            <Text style={{ fontSize: '14px', lineHeight: '1.7', whiteSpace: 'pre-wrap' }}>{data.needs}</Text>
           </Section>
           <Hr />
           <Text style={{ fontSize: '11px', color: '#999' }}>

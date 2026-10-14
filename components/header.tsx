@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 const navLinks = ['About', 'Services', 'Approach', 'Clients', 'Contact']
 
@@ -28,13 +29,13 @@ export default function Header() {
             : 'bg-transparent mix-blend-multiply'
         }`}
       >
-        <a
+        <Link
           href="/"
           className="font-['IBM_Plex_Mono'] text-[0.78rem] font-medium tracking-[0.15em] uppercase no-underline"
           style={{ color: scrolled ? '#0D0D0D' : '#F0EBE1' }}
         >
           Strat<span className="text-[#1A3D2B]">Act</span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-10">

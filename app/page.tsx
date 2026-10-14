@@ -1,22 +1,30 @@
-import HeroSection from '@/components/sections/HeroSection'
-import AboutSection from '@/components/sections/AboutSection'
-import ServicesSection from '@/components/sections/ServicesSection'
-import ApproachSection from '@/components/sections/ApproachSection'
-import ClientsSection from '@/components/sections/ClientsSection'
-import ContactSection from '@/components/sections/ContactSection'
+import SiteHeader from '@/components/SiteHeader'
+import Hero from '@/components/Hero'
+import Services from '@/components/Services'
+import Approach from '@/components/Approach'
+import About from '@/components/About'
+import Clients from '@/components/Clients'
+import Contact from '@/components/Contact'
+import SiteFooter from '@/components/SiteFooter'
 
 export default function Home() {
   return (
-    <>
-      <HeroSection />
-      <hr className="border-none h-px bg-[rgba(13,13,13,0.14)] m-0" />
-      <AboutSection />
-      <hr className="border-none h-px bg-[rgba(13,13,13,0.14)] m-0" />
-      <ServicesSection />
-      <ApproachSection />
-      <hr className="border-none h-px bg-[rgba(13,13,13,0.14)] m-0" />
-      <ClientsSection />
-      <ContactSection />
-    </>
+    <div id="top" style={{
+      minHeight: '100vh',
+      padding: '0 var(--pad-x)',
+      display: 'flex',
+      flexDirection: 'column',
+    }}>
+      <SiteHeader />
+      <main style={{ display: 'flex', flexDirection: 'column' }}>
+        <Hero />
+        <Services />
+        <Approach />
+        <About />
+        <Clients />
+        <Contact />
+      </main>
+      <SiteFooter />
+    </div>
   )
 }
